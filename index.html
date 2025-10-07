@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wania | Psicopedagoga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================
+       BASE
+    ========================================== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #ffffff;
+      color: #394e7a;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+    #mainHeader {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
+    }
+
+    #mainHeader .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+    }
+
+    #mainHeader .header-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #394e7a;
+    }
+
+    #mainHeader .header-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    #mainHeader .header-nav ul li a {
+      color: #394e7a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    #mainHeader .header-nav ul li a:hover {
+      color: #3399ff;
+    }
+
+    /* ==========================================
+   HERO
+========================================== */
+#heroSection.hero-section {
+  background-color: #ffffff;
+  padding: 5rem 0;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
+.hero-image {
+  flex: 0 0 auto;
+  max-width: 200px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+  flex: 1;
+  line-height: 1.6;
+  /* Removido text-align aqui — será controlado internamente */
+}
+
+/* ALINHAMENTO PRECISO COM O MENU DO HEADER E QUADRADO VERMELHO */
+.hero-text-inner {
+  max-width: 950px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  text-align: right; /* Todo o conteúdo interno alinhado à direita */
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #394e7a;
+  margin-bottom: 1rem;
+  /* Para empurrar "Sobre Mim" ainda mais para a direita, 
+     você pode adicionar uma margem esquerda ou reduzir a largura */
+  display: inline-block; /* Permite aplicar margem/padding com precisão */
+}
+
+.hero-paragraph {
+  font-size: 1.125rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: justify; /* 👈 Justifica o texto */
+  text-justify: inter-word; /* Melhor suporte em navegadores antigos */
+  line-height: 1.7;
+  padding: 0 0.5rem; /* Pequeno recuo para não encostar nas bordas */
+  hyphens: auto; /* Quebra de palavras com hífen em português */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+.hero-button {
+  background-color: #394e7a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #3399ff;
+}
+
+    /* ==========================================
+       ABOUT
+    ========================================== */
+    .about-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #394e7a, #ffffff, #394e7a);
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .about-container {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+      }
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #394e7a;
+      margin-bottom: 1rem;
+    }
+
+    .about-paragraph {
+      font-size: 1rem;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       SERVICES
+    ========================================== */
+    .services-section {
+      background-color: #ffffff;
+      padding: 5rem 2rem;
+    }
+
+    .services-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .services-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #394e7a;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, #394e7a, #394e7a, #394e7a);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #ffa600;
+    }
+
+    .service-text {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    /* ==========================================
+       CONTACT
+    ========================================== */
+    .contact-section {
+      background-color: #ffffff;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1f1f1f;
+      margin-bottom: 2rem;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 6rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 1.1rem;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1f1f1f;
+      transform: scale(1.03);
+    }
+
+    .instagram-link {
+      color: #e90765;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .instagram-link:hover {
+      color: #ff0000;
+      text-decoration: underline;
+    }
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+    .main-footer {
+      background-color: #394e7a;
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .footer-text {
+      margin: 0;
+    }
+
+    .footer-social {
+      margin-top: 1rem;
+    }
+
+    .footer-link {
+      color: #689ce9;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #ffa600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="mainHeader">
+    <div class="header-container">
+      <span class="header-title">Wania - Psicopedagoga</span>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#about">Sobre Mim</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="https://instagram.com/waniacruz.psicopedagoga" target="_blank">Instagram</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+<section id="heroSection" class="hero-section">
+  <div class="hero-container">
+    <div class="hero-image">
+      <img src="WANIA.PNG" alt="Wania Psicopedagoga" />
+    </div>
+    <div class="hero-text">
+      <div class="hero-text-inner">
+        <h2 class="hero-title">Sobre Mim</h2>
+        <p class="hero-paragraph">
+          Sou Wania, psicopedagoga apaixonada por ajudar crianças a vencerem suas dificuldades de aprendizagem. Em minha clínica, atuo com escuta, técnica e carinho, respeitando o tempo, o ritmo e as necessidades de cada criança. Além da clínica, também sou coordenadora da Escola VemSer, onde aplico minha experiência na área educacional para promover um ambiente de crescimento, acolhimento e desenvolvimento integral.
+        </p>
+        <a href="#contact" class="hero-button">Agendar consulta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== SOBRE MIM ===== -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2 class="about-title">Psicopedagogia com afeto e propósito.</h2>
+        <p class="about-paragraph">
+          Acolhendo cada criança e adolescente com atenção e sensibilidade para fortalecer o aprendizado, a autoconfiança e o desenvolvimento integral.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="w3.PNG" alt="Foto Wania com criança" style="max-width: 300px; border-radius: 0.75rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVIÇOS ===== -->
+  <section id="services" class="services-section">
+    <div class="services-container">
+      <h2 class="services-title">Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3 class="service-title">Avaliação Psicopedagógica</h3>
+          <p class="service-text">Identificamos as origens das dificuldades de aprendizagem e construímos um plano personalizado para superá-las.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Intervenção Psicopedagógica</h3>
+          <p class="service-text">Atendimentos individuais focados em técnicas que favorecem o aprendizado, a concentração e o fortalecimento emocional.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Orientação Familiar</h3>
+          <p class="service-text">Apoio aos pais e responsáveis para lidar com questões escolares e promover o desenvolvimento saudável das crianças e adolescentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h2 class="contact-title">Entrar em Contato</h2>
+      <a href="https://wa.me/5517981859890" target="_blank" class="whatsapp-button">WhatsApp</a>
+      <a href="https://www.instagram.com/waniacruz.psicopedagoga/" target="_blank" class="instagram-link">Instagram</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="main-footer">
+    <p class="footer-text">&copy; Wania Psicopedagoga</p>
+  </footer>
+
+</body>
+</html>
